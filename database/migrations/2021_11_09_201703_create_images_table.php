@@ -15,6 +15,10 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+            $table->unsignedInteger('product_id');
+            $table->string('image',225);
+            $table->unsignedTinyInteger('image_type')->comment('1=main-image,2=gallery-image');
+            $table->unsignedTinyInteger('status')->default(0)->comment('0=Inactive,1=Active');
             $table->timestamps();
         });
     }
