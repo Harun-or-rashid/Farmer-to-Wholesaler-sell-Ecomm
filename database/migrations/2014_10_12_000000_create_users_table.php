@@ -15,19 +15,31 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unique();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
-            $table->string('user_type');
-            $table->string('division');
-            $table->string('zila');
-            $table->string('upzila');
-            $table->string('address');
+            $table->string('type', 64)->comment('type of user');
+            $table->string('role',64)->comment('user role id');
+            $table->string('username', 128)->nullable();
+            $table->string('mobile', 128)->nullable();
+            $table->string('email', 128)->unique();
+            $table->string('password', 255);
+            $table->string('first_name', 128)->nullable();
+            $table->string('last_name', 128)->nullable();
+            $table->string('profile_picture', 225)->nullable();
+            $table->date('dob')->nullable()->comment('user birth date');
+            $table->tinyInteger('gender')->nullable()->comment('1=male,2=female,3=other');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+
+            $table->unsignedTinyInteger('status')->default(0)->comment('0=Inactive,1=Active');
+
+            $table->timestamp('created_at')->nullable();
+            $table->unsignedInteger('created_by')->nullable();
+
+            $table->timestamp('updated_at')->nullable();
+            $table->unsignedInteger('updated_by')->nullable();
+
+            $table->unsignedTinyInteger('deleted')->default(0)->comment('1=deleted');
+            $table->timestamp('deleted_at')->nullable();
+            $table->unsignedInteger('deleted_by')->nullable();
         });
     }
 

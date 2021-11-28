@@ -1,0 +1,75 @@
+/*============================================================================================*/
+/* Your custom styles below */
+/*============================================================================================*/
+img.img-fluid.lazy.loaded {
+    height: 290px;
+    width: 100%;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.modal {
+    z-index: 99999;
+}
+
+.btn-sm {
+    padding: 5px 10px !important;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-danger {
+    background-color: #3c3030;
+    color: #fff;
+    border-color: #ccc;
+}
+.btn-success {
+    background-color: #4fff3b;
+    color: #fff;
+    border-color: #ccc;
+}
+button.close {
+    background-color: #b7b5b5;
+    padding: 3px 9px !important;
+    border-radius: 50%;
+    margin: 0 !important;
+}
+.text-success{
+    color: #4fff3b;
+}
+
+
+.alert {
+    padding: 90px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.alert-success {
+    background-color: #64bb64;
+}

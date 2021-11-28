@@ -29,7 +29,7 @@ return [
     | mailers below. You are free to add additional mailers as required.
     |
     | Supported: "smtp", "sendmail", "mailgun", "ses",
-    |            "postmark", "log", "array", "failover"
+    |            "postmark", "log", "array"
     |
     */
 
@@ -43,6 +43,13 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
             'auth_mode' => null,
+            'stream' => [
+                'ssl' => [
+                    'allow_self_signed' => true,
+                    'verify_peer' => false,
+                    'verify_peer_name' => false,
+                ],
+            ],
         ],
 
         'ses' => [
@@ -69,14 +76,6 @@ return [
 
         'array' => [
             'transport' => 'array',
-        ],
-
-        'failover' => [
-            'transport' => 'failover',
-            'mailers' => [
-                'smtp',
-                'log',
-            ],
         ],
     ],
 
@@ -114,5 +113,7 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+
+
 
 ];
